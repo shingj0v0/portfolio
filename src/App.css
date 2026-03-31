@@ -421,6 +421,10 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  main {
+    padding-top: 120px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;

@@ -161,8 +161,7 @@ function App() {
           <div className="hero-glow"></div>
           <div className={`hero-content ${mounted ? 'fade-in' : ''}`}>
             <h1 className="hero-title">
-              안녕하세요, <span className="gradient-text">{data.name}</span>입니다.<br />
-              웹의 한계를 넘어갑니다.
+              안녕하세요, <span className="gradient-text">{data.name}</span>입니다. 웹의 한계를 넘어갑니다.
             </h1>
             <p className="hero-subtitle delay-1">
               {data.heroSubtitle}
