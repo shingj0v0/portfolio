@@ -1,3 +1,4 @@
+/* App.css additions */
 /* Layout */
 main {
   padding-top: 80px; /* offset for fixed navbar */
@@ -33,6 +34,7 @@ main {
 
 .hero-content {
   max-width: 800px;
+  position: relative;
 }
 
 .hero-title {
@@ -61,12 +63,14 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
 }
 
 .about-text p {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+  white-space: pre-wrap;
 }
 
 .skill-tags {
@@ -114,12 +118,13 @@ main {
 
 .about-stats {
   display: flex;
-  gap: 3rem;
+  justify-content: space-between;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .stat-item h4 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
@@ -136,6 +141,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
+  position: relative;
 }
 
 .project-card {
@@ -240,6 +246,7 @@ main {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
 }
 
 .contact-text {
@@ -281,6 +288,135 @@ footer {
   border-top: 1px solid var(--border-color);
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+/* === Admin / Editing Mode === */
+.admin-toolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.admin-toolbar button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.admin-toolbar button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.edit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-btn:hover {
+  background: var(--secondary);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid var(--border-color);
+}
+
+.modal-content.large {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.admin-login-trigger {
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Responsive adjustments */
